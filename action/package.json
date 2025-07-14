@@ -1,0 +1,28 @@
+{
+  "name": "carbon-cost-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to estimate CI/CD carbon footprint and promote sustainable development",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "github-action",
+    "carbon-footprint",
+    "sustainability",
+    "ci-cd",
+    "environmental-impact"
+  ],
+  "author": "Carbon-Cost Team",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
+    "axios": "^1.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.5"
+  }
+}

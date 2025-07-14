@@ -1,0 +1,11 @@
+name: 'Carbon-Cost Action'
+description: 'Estimates the carbon footprint of CI/CD workflows and promotes sustainable development practices'
+author: 'Carbon-Cost Team'
+inputs:
+  backend_url:
+    description: 'URL of the backend API to record CO2 data'
+    required: true
+    default: 'http://localhost:5000/record'
+runs:
+  using: 'node16'
+  main: 'dist/index.js' 

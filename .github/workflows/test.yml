@@ -1,0 +1,17 @@
+name: Carbon-Cost CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  carbon-cost:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Carbon-Cost Action
+        uses: ./action
+        with:
+          backend_url: 'http://localhost:5000/record' 
