@@ -1,4 +1,4 @@
-name: Carbon-Cost CI
+﻿name: Carbon-Cost CI
 
 on:
   push:
@@ -11,7 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+
+      - name: Start backend (in background)
+        run: |
+          cd backend
+          nohup python app.py &
+          sleep 5    # Wait a bit for server to boot
+
       - name: Run Carbon-Cost Action
         uses: ./action
         with:
-          backend_url: 'http://localhost:5000/record' 
+          backend_url: 'http://localhost:5000/record'
